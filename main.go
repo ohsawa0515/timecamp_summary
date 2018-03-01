@@ -100,8 +100,8 @@ func timeCamp(m message) (string, error) {
 
 func main() {
 	var m message
-	flag.StringVar(&m.From, "from", "", "Date range of the time entries returned (YYYY-MM-DD).")
-	flag.StringVar(&m.To, "to", "", "Date range of the time entries returned (YYYY-MM-DD).")
+	flag.StringVar(&m.From, "from", "", "The beginning of the date(YYYY-MM-DD). The default is today.")
+	flag.StringVar(&m.To, "to", "", "End of the date(YYYY-MM-DD). The default is the same day as from option.")
 	flag.Parse()
 	output, err := timeCamp(m)
 	if err != nil {
